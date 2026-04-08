@@ -1,0 +1,30 @@
+/* Layout fixes for 100% zoom on login page */
+.authentication-wrapper.authentication-cover .authentication-inner {
+  height: auto;
+  min-height: 100vh;
+}
+
+/* Prevent right column from forcing full width in flex row */
+.authentication-wrapper.authentication-cover .authentication-inner > .d-flex.w-100 {
+  flex: 1 1 0;
+  width: auto;
+  min-width: 0;
+}
+
+/* Keep left illustration column from growing too wide */
+.authentication-wrapper.authentication-cover .authentication-bg {
+  flex: 0 1 45%;
+  max-width: 45%;
+}
+
+/* Make illustration responsive */
+.authentication-wrapper.authentication-cover .authentication-bg img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1199.98px) {
+  .authentication-wrapper.authentication-cover .authentication-bg {
+    display: none !important;
+  }
+}

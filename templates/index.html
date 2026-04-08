@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Акция - Промокод "Пятница Суббота"</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #000;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        header .city {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #888;
+        }
+
+        .promo-banner {
+            position: relative;
+            text-align: center;
+            padding: 100px 20px;
+            background: #000;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        .promo-banner img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .promo-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .promo-text h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .promo-text p {
+            font-size: 20px;
+        }
+
+        .promo-button {
+            margin-top: 20px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .promo-button:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="city">Москва</div>
+    <nav>
+        <a href="#">Каталог</a>
+        <a href="#">Бренды</a>
+        <a href="#">Новинки</a>
+        <a href="#">Акции</a>
+        <a href="#">Магазины</a>
+        <a href="#">Flacon</a>
+    </nav>
+</header>
+
+<section class="promo-banner">
+    <img src="promo-box.png" alt="Promo Box">
+    <div class="promo-text">
+        <h1>Только один день</h1>
+        <p>Добавили новый промокод на -25% для выгодных покупок</p>
+        <button class="promo-button">Перейти к товарам</button>
+    </div>
+</section>
+</body>
+</html>
