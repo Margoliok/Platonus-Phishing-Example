@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Results</title>
+
+    <!-- Подключение стилей -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Public Sans', sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .search-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .results {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .result-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .result-item:last-child {
+            border-bottom: none;
+        }
+        .no-results {
+            color: #dc3545;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Результаты по ИИН студентов</h1>
+    </div>
+
+    <!-- Форма поиска -->
+    <div class="search-form">
+        <form action="/phishingsAll/" method="get" class="row g-3">
+            <div class="col-md-8">
+                <label for="iin" class="form-label">Поиск по ИИН</label>
+                <input type="text" id="iin" name="iin" class="form-control" placeholder="Введите ИИН">
+            </div>
+            <div class="col-md-4 d-flex align-items-end">
+                <button type="submit" class="btn btn-primary w-100">Поиск</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Результаты -->
+    <div class="results">
+        {% for fishing in fishings %}
+            <div class="result-item">
+                <b>ИИН: {{ fishing.iin }}</b> | <a href="/phishing/{{ fishing.id }}" class="btn btn-link">Подробнее...</a>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Сообщение, если результатов нет -->
+    <div class="no-results">
+        <h3>Результатов нет</h3>
+    </div>
+</div>
+
+<!-- Подвал -->
+<div class="footer">
+    © 2024 Phishing Results. Все права защищены.
+</div>
+
+<!-- Подключение скриптов -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
